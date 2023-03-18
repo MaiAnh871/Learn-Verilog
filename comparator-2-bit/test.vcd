@@ -1,0 +1,41 @@
+$date
+	Sat Mar 18 22:28:17 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module stimulus $end
+$var wire 1 ! z $end
+$var reg 2 " x [1:0] $end
+$var reg 2 # y [1:0] $end
+$scope module uut $end
+$var wire 2 $ x [1:0] $end
+$var wire 2 % y [1:0] $end
+$var wire 1 ! z $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 %
+b0 $
+b0 #
+b0 "
+1!
+$end
+#20000
+0!
+b1 "
+b1 $
+#40000
+1!
+b1 #
+b1 %
+#60000
+0!
+b0 #
+b0 %
+#120000

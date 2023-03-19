@@ -1,0 +1,91 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001c5911459e0 .scope module, "fulladdertb" "fulladdertb" 2 7;
+ .timescale -9 -10;
+v000001c5911446a0_0 .var "carryin", 0 0;
+v000001c591144a60_0 .net "carryout", 0 0, L_000001c5911449c0;  1 drivers
+v000001c591144600_0 .var "input1", 0 0;
+v000001c591143f20_0 .var "input2", 0 0;
+v000001c591144060_0 .net "out", 0 0, L_000001c591144240;  1 drivers
+S_000001c591145b70 .scope module, "uut" "fulladder" 2 17, 3 5 0, S_000001c5911459e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "x";
+    .port_info 1 /INPUT 1 "y";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "A";
+    .port_info 4 /OUTPUT 1 "cout";
+v000001c5911135b0_0 .net "A", 0 0, L_000001c591144240;  alias, 1 drivers
+L_000001c59118f870 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000001c5911130e0_0 .net *"_ivl_10", 0 0, L_000001c59118f870;  1 drivers
+v000001c5910f8f80_0 .net *"_ivl_11", 1 0, L_000001c591144880;  1 drivers
+v000001c591145d00_0 .net *"_ivl_13", 1 0, L_000001c591144c40;  1 drivers
+L_000001c59118f8b8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000001c591145da0_0 .net *"_ivl_16", 0 0, L_000001c59118f8b8;  1 drivers
+v000001c591139f30_0 .net *"_ivl_17", 1 0, L_000001c591144100;  1 drivers
+v000001c591139fd0_0 .net *"_ivl_3", 1 0, L_000001c5911447e0;  1 drivers
+L_000001c59118f828 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000001c59113a070_0 .net *"_ivl_6", 0 0, L_000001c59118f828;  1 drivers
+v000001c59113a110_0 .net *"_ivl_7", 1 0, L_000001c591144740;  1 drivers
+v000001c59113a1b0_0 .net "cin", 0 0, v000001c5911446a0_0;  1 drivers
+v000001c59113a250_0 .net "cout", 0 0, L_000001c5911449c0;  alias, 1 drivers
+v000001c591144ba0_0 .net "x", 0 0, v000001c591144600_0;  1 drivers
+v000001c591144d80_0 .net "y", 0 0, v000001c591143f20_0;  1 drivers
+L_000001c5911449c0 .part L_000001c591144100, 1, 1;
+L_000001c591144240 .part L_000001c591144100, 0, 1;
+L_000001c5911447e0 .concat [ 1 1 0 0], v000001c5911446a0_0, L_000001c59118f828;
+L_000001c591144740 .concat [ 1 1 0 0], v000001c591143f20_0, L_000001c59118f870;
+L_000001c591144880 .arith/sum 2, L_000001c5911447e0, L_000001c591144740;
+L_000001c591144c40 .concat [ 1 1 0 0], v000001c591144600_0, L_000001c59118f8b8;
+L_000001c591144100 .arith/sum 2, L_000001c591144880, L_000001c591144c40;
+    .scope S_000001c5911459e0;
+T_0 ;
+    %vpi_call 2 26 "$dumpfile", "test.vcd" {0 0 0};
+    %vpi_call 2 27 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001c5911459e0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001c591144600_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001c591143f20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001c5911446a0_0, 0, 1;
+    %delay 200, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001c591144600_0, 0, 1;
+    %delay 200, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001c591143f20_0, 0, 1;
+    %delay 200, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001c591144600_0, 0, 1;
+    %delay 200, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001c5911446a0_0, 0, 1;
+    %delay 200, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001c591143f20_0, 0, 1;
+    %delay 200, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001c591144600_0, 0, 1;
+    %delay 200, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001c591143f20_0, 0, 1;
+    %delay 400, 0;
+    %end;
+    .thread T_0;
+    .scope S_000001c5911459e0;
+T_1 ;
+    %vpi_call 2 44 "$monitor", "time = %2d, CIN =%1b, IN1=%1b, IN2=%1b, COUT=%1b, OUT=%1b", $time, v000001c5911446a0_0, v000001c591143f20_0, v000001c591144600_0, v000001c591144a60_0, v000001c591144060_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "fulladdertb.v";
+    "fulladder.v";

@@ -1,5 +1,3 @@
-// referencedesigner.com verilog tutorial
-// testbench for comparator module
 `timescale 1ns / 1ps
 module stimulus;
 	// Inputs
@@ -15,19 +13,22 @@ module stimulus;
 	);
  
 	initial begin
+	$dumpfile("test.vcd");
+    $dumpvars(0,stimulus);
 		// Initialize Inputs
-	x = 0;
-	y = 0;
+		x = 0;
+		y = 0;
  
 	#20 x = 1;
 	#20 y = 1;
 	#20 y = 0;	
 	#20 x = 1;	  
-	#40;
-    end  
+	#40 ;
+ 
+	end  
  
 		initial begin
-		 $monitor("x=%d,y=%d,z=%d \n",x,y,z);
+		 $monitor("t=%3d x=%d,y=%d,z=%d \n",$time,x,y,z, );
 		 end
  
 endmodule
